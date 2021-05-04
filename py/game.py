@@ -2,11 +2,7 @@ import random
 
 
 def flip():
-    chance = random.randint(0, 1)
-    if chance == 0:
-        return "pile"
-    else:
-        return "face"
+    return "face" if random.randint(0, 1) else "pile"
 
 
 money = 200
