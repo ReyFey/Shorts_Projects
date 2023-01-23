@@ -1,4 +1,4 @@
-from random import randint
+from random import choice
 
 # Rules
 PLAYERS = {
@@ -15,12 +15,17 @@ ROLES = {
 }
 
 # Affect roles to players
-roles = []
+remaining_roles = []
 for role in ROLES:
     for index in range(1, ROLES[role] + 1):
-        roles.append(role)
+        remaining_roles.append(role)
 
-print(roles)
+for player in PLAYERS:
+    choose_role = choice(remaining_roles)
+    remaining_roles.remove(choose_role)
+    PLAYERS[player] = choose_role
+
+print(PLAYERS)
 
 # Tour
 words = ["voiture", "camion"]
