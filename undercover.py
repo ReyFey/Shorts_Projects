@@ -29,4 +29,3 @@ print(PLAYERS)
 
 # Tour
 words = ["voiture", "camion"]
-words.append("white")
