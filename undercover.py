@@ -1,19 +1,16 @@
+from json import load
 from random import choice
 
+
+# JSON Files
+rules_file = open('rules.json', 'r')
+
+
 # Rules
-PLAYERS = {
-    "Player1": None,
-    "Player2": None,
-    "Player3": None,
-    "Player4": None,
-    "Player5": None
-}
-ROLES = {
-    "civil": 3,
-    "white": 1,
-    "undercover": 1
-}
-WORDS = [("car", "truck")]
+RULES = load(rules_file)
+PLAYERS = RULES["PLAYERS"]
+ROLES = RULES["ROLES"]
+WORDS = RULES["WORDS"]
 
 
 # Test rules
@@ -56,3 +53,6 @@ for player in PLAYERS:
             CIVIL_PLAYERS.append(player)
         case _:
             raise Exception("[ERROR] Someone has nothing role")
+
+
+print(choice(WORDS))
